@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exams — EduSphere</title>
+<link rel="stylesheet" href="assets/style.css">
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      container: { center: true, padding: { DEFAULT: '1rem', md: '1.25rem', lg: '2rem' } },
+      extend: {
+        colors: {
+          base: '#0B1220',     // page bg
+          panel: '#111A2A',    // cards
+          panel2:'#0F1726',    // darker insets
+          line: 'rgba(255,255,255,.06)',
+          brand:'#4F8CF9',
+          accent:'#8B5CF6'
+        },
+        boxShadow:{
+          soft:'0 14px 40px rgba(0,0,0,.28)',
+          hover:'0 18px 55px rgba(79,140,249,.20)'
+        },
+        backgroundImage:{
+          hero:
+            'radial-gradient(1200px 700px at 10% -10%, rgba(79,140,249,.18) 0%, rgba(79,140,249,0) 60%), radial-gradient(900px 600px at 100% 0, rgba(139,92,246,.15) 0%, rgba(139,92,246,0) 55%)'
+        }
+      }
+    }
+  }
+</script>
+</head>
+<body class="bg-base text-slate-200 selection:bg-brand/20 selection:text-white">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-line bg-base/90 backdrop-blur">
+        <div class="max-w-[1400px] px-6 lg:px-12 mx-auto flex items-center justify-between gap-4 py-3">
+            <a href="/" class="flex items-center gap-2" aria-label="EduSphere home">
+                <img src="assets/img/logo.svg" alt="EduSphere" />
+            </a>
+
+            <!-- Desktop nav (hidden at ≤991px) -->
+            <nav id="deskNav" class="max-[991px]:hidden flex items-center gap-6 text-sm">
+                <a class="hover:text-white" href="courses.html">Courses</a>
+                <a class="hover:text-white" href="live-classes.html">Live Classes</a>
+                <a class="hover:text-white" href="exams.html">Exams</a>
+                <a class="hover:text-white" href="results.html">Results</a>
+                <a class="hover:text-white" href="blog.html">Blog</a>
+            </nav>
+
+            <!-- Desktop CTAs (hidden at ≤991px) -->
+            <div class="max-[991px]:hidden flex items-center gap-2">
+                <a href="login.html" class="rounded-xl border border-line px-4 py-2 text-sm">Sign In</a>
+                <a href="signup.html" class="rounded-xl bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90">Get
+                    Started</a>
+            </div>
+
+            <!-- Burger (shows at ≤991px) -->
+            <button id="burger"
+                class="hidden max-[991px]:inline-flex items-center justify-center rounded-lg border border-line px-3 py-2 no-tap"
+                aria-expanded="false" aria-controls="mnav" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" stroke="currentColor"
+                    stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile nav (collapsible; only used ≤991px) -->
+        <div id="mnav" class="hidden border-t border-line bg-base">
+            <div class="max-w-[1024px] px-6 lg:px-12 mx-auto py-3 grid gap-2 text-sm">
+               <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="courses.html">Courses</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="live-classes.html">Live Classes</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="exams.html">Exams</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="results.html">Results</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="blog.html">Blog</a>
+
+                <div class="grid grid-cols-2 gap-2 pt-2">
+                    <a href="login.html" class="rounded-xl border border-line px-4 py-2 text-center">Sign In</a>
+                    <a href="signup.html" class="rounded-xl bg-brand px-4 py-2 text-center font-semibold text-white">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+ <!-- Hero -->
+  <section class="bg-hero">
+    <div class="container py-10 md:py-14">
+      <h1 class="text-3xl md:text-5xl font-extrabold">Exams &amp; Assessments</h1>
+      <p class="mt-3 max-w-3xl text-slate-400">
+        Find the latest exam schedules, syllabus breakdowns, and mock tests. Prepare confidently with clear guidelines and resources.
+      </p>
+    </div>
+  </section>
+
+  <!-- Upcoming Exam Schedule -->
+  <section class="py-6 md:py-10">
+    <div class="container">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Upcoming Exam Schedule</h2>
+
+      <div class="mt-5 grid lg:grid-cols-4 md:grid-cols-2 gap-4">
+        <!-- Exam 1 -->
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">Full-Stack Web Dev — Term Assessment</h3>
+          <ul class="mt-2 space-y-1 text-sm text-slate-400">
+            <li><span class="font-semibold text-slate-300">Date:</span> 12 Oct 2025</li>
+            <li><span class="font-semibold text-slate-300">Time:</span> 10:00 AM – 12:30 PM IST</li>
+            <li><span class="font-semibold text-slate-300">Mode:</span> Online (Proctored)</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">View Admit Card</a>
+        </article>
+
+        <!-- Exam 2 -->
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">Data Science — Midterm</h3>
+          <ul class="mt-2 space-y-1 text-sm text-slate-400">
+            <li><span class="font-semibold text-slate-300">Date:</span> 19 Oct 2025</li>
+            <li><span class="font-semibold text-slate-300">Time:</span> 2:00 PM – 4:00 PM IST</li>
+            <li><span class="font-semibold text-slate-300">Mode:</span> Test Center</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Test Center Locator</a>
+        </article>
+
+        <!-- Exam 3 -->
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">UI/UX Design — Portfolio Review</h3>
+          <ul class="mt-2 space-y-1 text-sm text-slate-400">
+            <li><span class="font-semibold text-slate-300">Window:</span> 22–24 Oct 2025</li>
+            <li><span class="font-semibold text-slate-300">Format:</span> Live Panel + Submission</li>
+          </ul>
+          <a href="#" class="mt-6 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Submission Portal</a>
+        </article>
+
+        <!-- Exam 4 -->
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">Cybersecurity — Lab Practical</h3>
+          <ul class="mt-2 space-y-1 text-sm text-slate-400">
+            <li><span class="font-semibold text-slate-300">Date:</span> 02 Nov 2025</li>
+            <li><span class="font-semibold text-slate-300">Time:</span> 6:00 PM – 8:00 PM IST</li>
+            <li><span class="font-semibold text-slate-300">Mode:</span> Virtual Lab</li>
+          </ul>
+          <a href="#" class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Check System Requirements</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Syllabus & Guidelines -->
+  <section class="pb-6 md:pb-12">
+    <div class="container">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Syllabus &amp; Exam Guidelines</h2>
+
+      <div class="mt-5 grid md:grid-cols-3 gap-4">
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <span class="badge inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs text-amber-200/90">FQ</span>
+          <h3 class="mt-2 font-semibold">Syllabus Packs</h3>
+          <p class="mt-1 text-sm text-slate-400">Download topic-wise syllabus with weightage and sample questions.</p>
+          <a href="#" class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Download Syllabus</a>
+        </article>
+
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <span class="badge inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs text-sky-200/90">Rules</span>
+          <h3 class="mt-2 font-semibold">Exam Day Guidelines</h3>
+          <p class="mt-1 text-sm text-slate-400">Identity proof, reporting time, allowed materials, and code of conduct.</p>
+          <a href="#" class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Read Guidelines</a>
+        </article>
+
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <span class="badge inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs text-green-200/90">Policy</span>
+          <h3 class="mt-2 font-semibold">Re-evaluation &amp; Retake</h3>
+          <p class="mt-1 text-sm text-slate-400">How to request paper review, retake windows, and applicable fees.</p>
+          <a href="#" class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">View Policy</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mock Tests -->
+  <section class="pb-6 md:pb-12">
+    <div class="container">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Mock Tests &amp; Practice</h2>
+
+      <div class="mt-5 grid lg:grid-cols-4 md:grid-cols-2 gap-4">
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">Mock Test: JavaScript Fundamentals</h3>
+          <p class="mt-1 text-sm text-slate-400">30 questions • 45 minutes • Instant analytics</p>
+          <a href="#" class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Start Mock</a>
+        </article>
+
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">Mock Test: Python &amp; Pandas</h3>
+          <p class="mt-1 text-sm text-slate-400">25 questions • 40 minutes • Topic-wise review</p>
+          <a href="#" class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Start Mock</a>
+        </article>
+
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">Mock Test: UX Principles</h3>
+          <p class="mt-1 text-sm text-slate-400">Caselets • Heuristics • Wireframe critique</p>
+          <a href="#" class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Start Mock</a>
+        </article>
+
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">Mock Test: Networks &amp; Security</h3>
+          <p class="mt-1 text-sm text-slate-400">Scenario-based • 60 minutes • Lab-style items</p>
+          <a href="#" class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Start Mock</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="pb-6 md:pb-12">
+    <div class="container">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Exam FAQs</h2>
+
+      <div class="mt-5 grid md:grid-cols-2 gap-4">
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">How do I get my admit card?</h3>
+          <p class="mt-1 text-sm text-slate-400">Admit cards appear in your dashboard 7 days before the exam. You’ll also receive an email with a download link.</p>
+        </article>
+
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">What if I have a clash?</h3>
+          <p class="mt-1 text-sm text-slate-400">Submit a clash request within 48 hours of schedule announcement. Alternate slots are subject to availability.</p>
+        </article>
+
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">Are calculators allowed?</h3>
+          <p class="mt-1 text-sm text-slate-400">Basic calculators are allowed for Data Science &amp; Business exams. Programmable devices are not permitted.</p>
+        </article>
+
+        <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+          <h3 class="font-semibold">When are results declared?</h3>
+          <p class="mt-1 text-sm text-slate-400">Objective tests: within 5–7 days. Practicals/portfolios: within 10–14 days after evaluation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="pb-12">
+    <div class="container">
+      <div class="rounded-2xl border border-line bg-panel p-8 text-center shadow-soft">
+        <h3 class="text-2xl md:text-3xl font-extrabold">Be Exam-Ready</h3>
+        <p class="mt-2 text-slate-400">Subscribe for schedule alerts, new mock tests, and important updates.</p>
+        <form class="mx-auto mt-6 flex max-w-3xl flex-col gap-3 sm:flex-row" onsubmit="event.preventDefault(); alert('Subscribed!'); this.reset();">
+          <input type="email" required placeholder="Enter your email" class="w-full rounded-xl border border-line bg-panel2 px-4 py-3 text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-brand" />
+          <button class="rounded-xl bg-brand px-5 py-3 text-sm font-semibold text-white hover:bg-brand/90">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+<!-- Footer -->
+<footer class="border-t border-line py-8">
+  <div class="container grid md:grid-cols-2 gap-6 text-sm text-slate-400">
+    <div>
+      <h4 class="font-semibold text-slate-200">EduSphere</h4>
+      <p class="mt-2 max-w-md">A clean learning hub you can adapt to any institute, academy, or ed-tech brand.</p>
+      <p class="mt-4 text-xs">© <span id="year"></span> EduSphere. All rights reserved.</p>
+    </div>
+    <div class="md:text-right">
+      <h4 class="font-semibold text-slate-200">Quick Links</h4>
+      <div class="mt-2 space-x-4">
+        <a class="hover:text-slate-200" href="privacy.html">Privacy</a>
+        <a class="hover:text-slate-200" href="terms.html">Terms</a>
+        <a class="hover:text-slate-200" href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/script.js"></script>
+</body>
+</html>

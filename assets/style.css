@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.no-tap {
+    -webkit-tap-highlight-color: transparent
+}
+
+/* Reusable hover for all cards */
+.card {
+    transition: transform .28s ease, box-shadow .28s ease, background-color .28s ease, border-color .28s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 55px rgba(79, 140, 249, .20);
+    border-color: rgba(255, 255, 255, .12);
+    background-color: #121d31;
+}
+
+/* Category banner zoom */
+.zoom-wrap {
+    overflow: hidden;
+    border-radius: 1rem
+}
+
+.zoom-wrap img {
+    transition: transform .45s ease, filter .45s ease
+}
+
+.zoom-wrap:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.05)
+}

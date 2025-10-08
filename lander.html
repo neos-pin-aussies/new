@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="assets/img/favicon.svg">
+    <title>GameVerse — Playful Web Studio</title>
+    <meta name="description" content="GameVerse is a modern, responsive game website with an engaging canvas game.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/lander.css" />
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: { center: true, padding: { DEFAULT: '1rem', md: '1.25rem', lg: '2rem' } },
+                extend: {
+                    colors: {
+                        base: '#0B1220', panel: '#111A2A', panel2: '#0F1726',
+                        line: 'rgba(255,255,255,.06)', brand: '#4F8CF9', accent: '#8B5CF6'
+                    },
+                    boxShadow: { soft: '0 14px 40px rgba(0,0,0,.28)', hover: '0 18px 55px rgba(79,140,249,.20)' },
+                    backgroundImage: {
+                        hero:
+                            'radial-gradient(1200px 700px at 10% -10%, rgba(79,140,249,.18) 0%, rgba(79,140,249,0) 60%), radial-gradient(900px 600px at 100% 0, rgba(139,92,246,.15) 0%, rgba(139,92,246,0) 55%)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .card {
+            transition: transform .28s ease, box-shadow .28s ease, background-color .28s ease, border-color .28s ease
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 55px rgba(79, 140, 249, .20);
+            border-color: rgba(255, 255, 255, .12);
+            background-color: #121d31
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-line bg-base/90 backdrop-blur">
+        <div class="max-w-[1400px] px-6 lg:px-12 mx-auto flex items-center justify-between gap-4 py-3">
+            <a href="/" class="flex items-center gap-2" aria-label="GameVerse home">
+                <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl
+               bg-gradient-to-br from-indigo-500 to-cyan-500 text-white
+               font-black shadow-[0_8px_24px_rgba(0,0,0,.35)]">G</span>
+                <span class="text-xl md:text-2xl font-extrabold tracking-tight
+               bg-gradient-to-r from-indigo-300 via-sky-300 to-cyan-300
+               bg-clip-text text-transparent">GameVerse</span>
+            </a>
+
+
+            <!-- Desktop nav (hidden at ≤991px) -->
+            <nav id="deskNav" class="max-[991px]:hidden flex items-center gap-6 text-sm">
+                <a class="hover:text-white" href="courses.html">Courses</a>
+                <a class="hover:text-white" href="live-classes.html">Live Classes</a>
+                <a class="hover:text-white" href="exams.html">Exams</a>
+                <a class="hover:text-white" href="results.html">Results</a>
+                <a class="hover:text-white" href="blog.html">Blog</a>
+            </nav>
+
+            <!-- Desktop CTAs (hidden at ≤991px) -->
+            <div class="max-[991px]:hidden flex items-center gap-2">
+                <a href="login.html" class="rounded-xl border border-line px-4 py-2 text-sm">Sign In</a>
+                <a href="signup.html"
+                    class="rounded-xl bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90">Get
+                    Started</a>
+            </div>
+
+            <!-- Burger (shows at ≤991px) -->
+            <button id="burger"
+                class="hidden max-[991px]:inline-flex items-center justify-center rounded-lg border border-line px-3 py-2 no-tap"
+                aria-expanded="false" aria-controls="mnav" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" stroke="currentColor"
+                    stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile nav (collapsible; only used ≤991px) -->
+        <div id="mnav" class="hidden border-t border-line bg-base">
+            <div class="max-w-[1024px] px-6 lg:px-12 mx-auto py-3 grid gap-2 text-sm">
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="courses.html">Courses</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="live-classes.html">Live Classes</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="exams.html">Exams</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="results.html">Results</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="blog.html">Blog</a>
+
+                <div class="grid grid-cols-2 gap-2 pt-2">
+                    <a href="login.html" class="rounded-xl border border-line px-4 py-2 text-center">Sign In</a>
+                    <a href="signup.html" class="rounded-xl bg-brand px-4 py-2 text-center font-semibold text-white">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="
+  background: url('assets/img/gameforge.png') no-repeat center center/cover;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+">
+        <div class="container" style="text-align:center;color:white">
+            <h1>Welcome (18+ route)</h1>
+            <p>Placeholder page for your monetization or content flow. Update later as needed.</p>
+            <a class="btn" href="/">Back to site</a>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="border-t border-line py-8">
+        <div class="container grid md:grid-cols-2 gap-6 text-sm text-slate-400">
+            <div>
+                <h4 class="font-semibold text-slate-200">GameVerse</h4>
+                <p class="mt-2 max-w-md">A clean learning hub you can adapt to any institute, academy, or ed-tech brand.
+                </p>
+                <p class="mt-4 text-xs">© <span id="year"></span> GameVerse. All rights reserved.</p>
+            </div>
+            <div class="md:text-right">
+                <h4 class="font-semibold text-slate-200">Quick Links</h4>
+                <div class="mt-2 space-x-4">
+                    <a class="hover:text-slate-200" href="privacy.html">Privacy</a>
+                    <a class="hover:text-slate-200" href="terms.html">Terms</a>
+                    <a class="hover:text-slate-200" href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="assets/lander.js"></script>
+<script src="assets/script.js"></script>
+
+</html>

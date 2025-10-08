@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduSphere — Sample Blog Post</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: { center: true, padding: { DEFAULT: '1rem', md: '1.25rem', lg: '2rem' } },
+                extend: {
+                    colors: {
+                        base: '#0B1220', panel: '#111A2A', panel2: '#0F1726',
+                        line: 'rgba(255,255,255,.06)', brand: '#4F8CF9', accent: '#8B5CF6'
+                    },
+                    boxShadow: { soft: '0 14px 40px rgba(0,0,0,.28)', hover: '0 18px 55px rgba(79,140,249,.20)' },
+                    backgroundImage: {
+                        hero:
+                            'radial-gradient(1200px 700px at 10% -10%, rgba(79,140,249,.18) 0%, rgba(79,140,249,0) 60%), radial-gradient(900px 600px at 100% 0, rgba(139,92,246,.15) 0%, rgba(139,92,246,0) 55%)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .card {
+            transition: transform .28s ease, box-shadow .28s ease, background-color .28s ease, border-color .28s ease
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 55px rgba(79, 140, 249, .20);
+            border-color: rgba(255, 255, 255, .12);
+            background-color: #121d31
+        }
+
+        .prose h2 {
+            margin-top: 1.75rem
+        }
+
+        .rule {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .06), transparent)
+        }
+    </style>
+</head>
+
+<body class="bg-base text-slate-200 selection:bg-brand/20 selection:text-white">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-line bg-base/90 backdrop-blur">
+        <div class="max-w-[1400px] px-6 lg:px-12 mx-auto flex items-center justify-between gap-4 py-3">
+            <a href="/" class="flex items-center gap-2" aria-label="EduSphere home">
+                <img src="assets/img/logo.svg" alt="EduSphere" />
+            </a>
+
+            <!-- Desktop nav (hidden at ≤991px) -->
+            <nav id="deskNav" class="max-[991px]:hidden flex items-center gap-6 text-sm">
+                <a class="hover:text-white" href="courses.html">Courses</a>
+                <a class="hover:text-white" href="live-classes.html">Live Classes</a>
+                <a class="hover:text-white" href="exams.html">Exams</a>
+                <a class="hover:text-white" href="results.html">Results</a>
+                <a class="hover:text-white" href="blog.html">Blog</a>
+            </nav>
+
+            <!-- Desktop CTAs (hidden at ≤991px) -->
+            <div class="max-[991px]:hidden flex items-center gap-2">
+                <a href="login.html" class="rounded-xl border border-line px-4 py-2 text-sm">Sign In</a>
+                <a href="signup.html"
+                    class="rounded-xl bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90">Get
+                    Started</a>
+            </div>
+
+            <!-- Burger (shows at ≤991px) -->
+            <button id="burger"
+                class="hidden max-[991px]:inline-flex items-center justify-center rounded-lg border border-line px-3 py-2 no-tap"
+                aria-expanded="false" aria-controls="mnav" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" stroke="currentColor"
+                    stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile nav (collapsible; only used ≤991px) -->
+        <div id="mnav" class="hidden border-t border-line bg-base">
+            <div class="max-w-[1024px] px-6 lg:px-12 mx-auto py-3 grid gap-2 text-sm">
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="courses.html">Courses</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="live-classes.html">Live Classes</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="exams.html">Exams</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="results.html">Results</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="blog.html">Blog</a>
+
+                <div class="grid grid-cols-2 gap-2 pt-2">
+                    <a href="login.html" class="rounded-xl border border-line px-4 py-2 text-center">Sign In</a>
+                    <a href="signup.html" class="rounded-xl bg-brand px-4 py-2 text-center font-semibold text-white">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Hero -->
+    <section class="bg-hero">
+        <div class="container py-8 md:py-12">
+            <h1 class="text-3xl md:text-5xl font-extrabold">Sample Blog Post Title</h1>
+            <p class="mt-2 text-sm text-slate-400">By Admin • 28 Sep 2025 • 5 min read</p>
+        </div>
+    </section>
+
+    <!-- Article Card -->
+    <main class="container py-10">
+        <article class="rounded-2xl border border-line bg-panel p-5 md:p-8 shadow-soft">
+            <!-- Intro -->
+            <h2 class="text-xl md:text-2xl font-extrabold">Introduction</h2>
+            <p class="mt-2 text-slate-300">
+                Welcome to this sample blog post. This template is designed to show you how a single article page will
+                look inside EduSphere.
+                Replace this placeholder content with your own blog article.
+            </p>
+
+            <div class="my-5 rule"></div>
+
+            <!-- Section 1 -->
+            <h2 class="text-xl md:text-2xl font-extrabold">Section One: Key Ideas</h2>
+            <p class="mt-2 text-slate-300">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in sapien eros. Suspendisse
+                potenti. Proin nec erat eu libero gravida condimentum. Sed blandit dui sed dapibus faucibus.
+            </p>
+            <ul class="mt-3 list-disc pl-5 text-slate-300 space-y-1">
+                <li>Clear explanation of the topic</li>
+                <li>Relevant examples and stories</li>
+                <li>Links to related resources</li>
+            </ul>
+
+            <div class="my-5 rule"></div>
+
+            <!-- Section 2 -->
+            <h2 class="text-xl md:text-2xl font-extrabold">Section Two: Practical Tips</h2>
+            <p class="mt-2 text-slate-300">
+                Curabitur vehicula, turpis at amet ultrices eleifend, lorem orci efficitur augue, a hendrerit ipsum
+                mauris ac arcu. Nullam ac tincidunt felis.
+            </p>
+            <ol class="mt-3 list-decimal pl-5 text-slate-300 space-y-1">
+                <li>Start small and build momentum</li>
+                <li>Use real-world projects</li>
+                <li>Review and revise regularly</li>
+            </ol>
+
+            <!-- Callout -->
+            <div class="mt-5 rounded-xl border border-white/10 bg-panel2 px-4 py-3 text-sm italic text-slate-300">
+                “Learning never exhausts the mind” — <span class="not-italic font-medium">Leonardo da Vinci</span>
+            </div>
+
+            <div class="my-5 rule"></div>
+
+            <!-- Conclusion -->
+            <h2 class="text-xl md:text-2xl font-extrabold">Conclusion</h2>
+            <p class="mt-2 text-slate-300">
+                That’s the end of our sample article. You can expand sections, add images, embed videos, or style
+                callouts as needed. This template ensures your blog posts stay consistent with the EduSphere design
+                system.
+            </p>
+
+            <a href="blog.html"
+                class="mt-5 inline-block rounded-lg border border-line px-4 py-2 text-sm hover:bg-white/5">← Back to
+                Blog</a>
+        </article>
+    </main>
+
+    <!-- Related Posts -->
+    <section class="pb-12">
+        <div class="container">
+            <h3 class="text-2xl md:text-3xl font-extrabold">Related Posts</h3>
+
+            <div class="mt-5 grid md:grid-cols-3 gap-4">
+                <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+                    <a href="#"
+                        class="text-brand underline decoration-transparent hover:decoration-inherit font-semibold">
+                        10 Tips for Effective Online Learning
+                    </a>
+                    <p class="mt-2 text-sm text-slate-400">
+                        Discover how to stay focused, manage your time, and make the most of online classes.
+                    </p>
+                </article>
+
+                <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+                    <a href="#"
+                        class="text-brand underline decoration-transparent hover:decoration-inherit font-semibold">
+                        Design Thinking for Students
+                    </a>
+                    <p class="mt-2 text-sm text-slate-400">
+                        An intro to creative problem-solving and how design thinking can boost your projects.
+                    </p>
+                </article>
+
+                <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+                    <a href="#"
+                        class="text-brand underline decoration-transparent hover:decoration-inherit font-semibold">
+                        Careers in Data Science
+                    </a>
+                    <p class="mt-2 text-sm text-slate-400">
+                        Explore career paths, skills, and opportunities in the world of data science.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-line py-8">
+        <div class="container grid md:grid-cols-2 gap-6 text-sm text-slate-400">
+            <div>
+                <h4 class="font-semibold text-slate-200">EduSphere</h4>
+                <p class="mt-2 max-w-md">A clean learning hub you can adapt to any institute, academy, or ed-tech brand.
+                </p>
+                <p class="mt-4 text-xs">© <span id="year"></span> EduSphere. All rights reserved.</p>
+            </div>
+            <div class="md:text-right">
+                <h4 class="font-semibold text-slate-200">Quick Links</h4>
+                <div class="mt-2 space-x-4">
+                    <a class="hover:text-slate-200" href="privacy.html">Privacy</a>
+                    <a class="hover:text-slate-200" href="terms.html">Terms</a>
+                    <a class="hover:text-slate-200" href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+
+</html>

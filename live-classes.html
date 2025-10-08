@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Live Classes — EduSphere</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                container: { center: true, padding: { DEFAULT: '1rem', md: '1.25rem', lg: '2rem' } },
+                extend: {
+                    colors: {
+                        base: '#0B1220',     // page bg
+                        panel: '#111A2A',    // cards
+                        panel2: '#0F1726',    // darker insets
+                        line: 'rgba(255,255,255,.06)',
+                        brand: '#4F8CF9',
+                        accent: '#8B5CF6'
+                    },
+                    boxShadow: {
+                        soft: '0 14px 40px rgba(0,0,0,.28)',
+                        hover: '0 18px 55px rgba(79,140,249,.20)'
+                    },
+                    backgroundImage: {
+                        hero:
+                            'radial-gradient(1200px 700px at 10% -10%, rgba(79,140,249,.18) 0%, rgba(79,140,249,0) 60%), radial-gradient(900px 600px at 100% 0, rgba(139,92,246,.15) 0%, rgba(139,92,246,0) 55%)'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-base text-slate-200 selection:bg-brand/20 selection:text-white">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 border-b border-line bg-base/90 backdrop-blur">
+        <div class="max-w-[1400px] px-6 lg:px-12 mx-auto flex items-center justify-between gap-4 py-3">
+            <a href="/" class="flex items-center gap-2" aria-label="EduSphere home">
+                <img src="assets/img/logo.svg" alt="EduSphere" />
+            </a>
+
+            <!-- Desktop nav (hidden at ≤991px) -->
+            <nav id="deskNav" class="max-[991px]:hidden flex items-center gap-6 text-sm">
+                <a class="hover:text-white" href="courses.html">Courses</a>
+                <a class="hover:text-white" href="live-classes.html">Live Classes</a>
+                <a class="hover:text-white" href="exams.html">Exams</a>
+                <a class="hover:text-white" href="results.html">Results</a>
+                <a class="hover:text-white" href="blog.html">Blog</a>
+            </nav>
+
+            <!-- Desktop CTAs (hidden at ≤991px) -->
+            <div class="max-[991px]:hidden flex items-center gap-2">
+                <a href="login.html" class="rounded-xl border border-line px-4 py-2 text-sm">Sign In</a>
+                <a href="signup.html"
+                    class="rounded-xl bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand/90">Get
+                    Started</a>
+            </div>
+
+            <!-- Burger (shows at ≤991px) -->
+            <button id="burger"
+                class="hidden max-[991px]:inline-flex items-center justify-center rounded-lg border border-line px-3 py-2 no-tap"
+                aria-expanded="false" aria-controls="mnav" aria-label="Toggle navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" stroke="currentColor"
+                    stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile nav (collapsible; only used ≤991px) -->
+        <div id="mnav" class="hidden border-t border-line bg-base">
+            <div class="max-w-[1024px] px-6 lg:px-12 mx-auto py-3 grid gap-2 text-sm">
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="courses.html">Courses</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="live-classes.html">Live Classes</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="exams.html">Exams</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="results.html">Results</a>
+                <a class="rounded-lg px-3 py-2 hover:bg-white/5" href="blog.html">Blog</a>
+
+                <div class="grid grid-cols-2 gap-2 pt-2">
+                    <a href="login.html" class="rounded-xl border border-line px-4 py-2 text-center">Sign In</a>
+                    <a href="signup.html" class="rounded-xl bg-brand px-4 py-2 text-center font-semibold text-white">Get
+                        Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-hero">
+        <div class="container py-10 md:py-14">
+            <h1 class="text-3xl md:text-5xl font-extrabold">Interactive Live Classes</h1>
+            <p class="mt-3 max-w-3xl text-slate-400">
+                Learn in real-time with expert mentors. Ask questions, join discussions, and collaborate with peers —
+                all from the comfort of your home.
+            </p>
+        </div>
+    </section>
+
+    <!-- Upcoming Sessions -->
+    <section class="py-6 md:py-10">
+        <div class="container">
+            <h2 class="text-2xl md:text-3xl font-extrabold">Upcoming Sessions</h2>
+
+            <div class="mt-5 grid md:grid-cols-3 gap-4">
+                <!-- Session 1 -->
+                <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+                    <h3 class="font-semibold">Full-Stack Bootcamp (Week 3)</h3>
+                    <ul class="mt-2 space-y-1 text-sm text-slate-400">
+                        <li><span class="font-semibold text-slate-300">Date:</span> 5 Oct 2025</li>
+                        <li><span class="font-semibold text-slate-300">Time:</span> 7:00 PM IST</li>
+                        <li><span class="font-semibold text-slate-300">Topic:</span> REST APIs with Node.js</li>
+                    </ul>
+                    <a href="#"
+                        class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Join
+                        Class</a>
+                </article>
+
+                <!-- Session 2 -->
+                <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+                    <h3 class="font-semibold">Data Science Mastery</h3>
+                    <ul class="mt-2 space-y-1 text-sm text-slate-400">
+                        <li><span class="font-semibold text-slate-300">Date:</span> 6 Oct 2025</li>
+                        <li><span class="font-semibold text-slate-300">Time:</span> 6:00 PM IST</li>
+                        <li><span class="font-semibold text-slate-300">Topic:</span> Data Cleaning with Pandas</li>
+                    </ul>
+                    <a href="#"
+                        class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Join
+                        Class</a>
+                </article>
+
+                <!-- Session 3 -->
+                <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+                    <h3 class="font-semibold">UI/UX Live Workshop</h3>
+                    <ul class="mt-2 space-y-1 text-sm text-slate-400">
+                        <li><span class="font-semibold text-slate-300">Date:</span> 8 Oct 2025</li>
+                        <li><span class="font-semibold text-slate-300">Time:</span> 8:00 PM IST</li>
+                        <li><span class="font-semibold text-slate-300">Topic:</span> Wireframing Tools (Figma)</li>
+                    </ul>
+                    <a href="#"
+                        class="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-xs font-semibold text-white hover:bg-brand/90">Join
+                        Class</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Students Love Live Classes -->
+    <section class="pb-6 md:pb-12">
+        <div class="container">
+            <h2 class="text-2xl md:text-3xl font-extrabold">Why Students Love Live Classes</h2>
+
+            <div class="mt-5 grid md:grid-cols-3 gap-4">
+                <!-- Two-way learning -->
+                <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+                    <span
+                        class="badge inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs text-slate-300">Interactive</span>
+                    <h3 class="mt-2 font-semibold">Two-way Learning</h3>
+                    <p class="mt-1 text-sm text-slate-400">
+                        Engage with mentors directly, clear doubts instantly, and collaborate in breakout rooms.
+                    </p>
+                </article>
+
+                <!-- Recordings -->
+                <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+                    <span
+                        class="badge inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs text-slate-300">Flexible</span>
+                    <h3 class="mt-2 font-semibold">Recordings Available</h3>
+                    <p class="mt-1 text-sm text-slate-400">
+                        Missed a class? No worries — recordings are available within 24 hours for revision.
+                    </p>
+                </article>
+
+                <!-- Live Projects -->
+                <article class="card rounded-2xl border border-line bg-panel p-5 shadow-soft">
+                    <span
+                        class="badge inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs text-slate-300">Hands-on</span>
+                    <h3 class="mt-2 font-semibold">Live Projects</h3>
+                    <p class="mt-1 text-sm text-slate-400">
+                        Work on assignments and real-world projects during class for practical learning.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="pb-12">
+        <div class="container">
+            <div class="rounded-2xl border border-line bg-panel p-8 text-center shadow-soft">
+                <h3 class="text-2xl md:text-3xl font-extrabold">Get Access to Live Classes</h3>
+                <p class="mt-2 text-slate-400">Sign up today and unlock interactive sessions across all our programs.
+                </p>
+                <a href="signup.html"
+                    class="mt-5 inline-block rounded-lg bg-brand px-5 py-3 text-sm font-semibold text-white hover:bg-brand/90">Join
+                    Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-line py-8">
+        <div class="container grid md:grid-cols-2 gap-6 text-sm text-slate-400">
+            <div>
+                <h4 class="font-semibold text-slate-200">EduSphere</h4>
+                <p class="mt-2 max-w-md">A clean learning hub you can adapt to any institute, academy, or ed-tech brand.
+                </p>
+                <p class="mt-4 text-xs">© <span id="year"></span> EduSphere. All rights reserved.</p>
+            </div>
+            <div class="md:text-right">
+                <h4 class="font-semibold text-slate-200">Quick Links</h4>
+                <div class="mt-2 space-x-4">
+                    <a class="hover:text-slate-200" href="privacy.html">Privacy</a>
+                    <a class="hover:text-slate-200" href="terms.html">Terms</a>
+                    <a class="hover:text-slate-200" href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
