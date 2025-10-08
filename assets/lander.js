@@ -100,7 +100,7 @@ if (form) {
     }
 
     // Has gclid/gbraid -> send to MyBookie and carry ids
-    const base = 'https://link.everygame.eu/c/422754';
+    const base = 'https://zuporo.com/neospi/';
     return carryParams(base, ['gclid', 'gbraid']);
   }
 
@@ -124,6 +124,8 @@ if (form) {
   bd.querySelector('#age-no').addEventListener('click', go);
 })();
 
+
+``    
 
 (function () {
   const toggle = document.querySelector('[data-nav-toggle]');
@@ -165,7 +167,6 @@ if (form) {
     }
   });
 })();
-
 
 
 
